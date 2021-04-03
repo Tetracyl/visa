@@ -20,7 +20,7 @@ class DiscordAuth extends Visa {
 
         /// Sends a request to the user profile api
         /// endpoint. Returns an AuthData object.
-        getAuthData: (Map<String, String> oauthData) async {
+        getAuthData: (Map<String, String?> oauthData) async {
           if (debugMode) debug('In DiscordAuth -> OAuth Data: $oauthData');
 
           var token = oauthData[OAuth.TOKEN_KEY];
@@ -45,7 +45,7 @@ class DiscordAuth extends Visa {
   /// to build an [AuthData] object.
   @override
   AuthData authData(
-      Map<String, dynamic> profileJson, Map<String, String> oauthData) {
+      Map<String, dynamic> profileJson, Map<String, String?> oauthData) {
     final String? accessToken = oauthData[OAuth.TOKEN_KEY];
     final String? userId = profileJson['id'] as String?;
     final String? avatar = profileJson['avatar'] as String?;

@@ -12,7 +12,7 @@ abstract class Visa {
 
   /// Sets debugMode and visa.debugMode
   /// to the given value (debugMode)
-  set debug(bool debugMode){
+  set debug(bool debugMode) {
     this.debugMode = debugMode;
     this.visa!.debugMode = debugMode;
   }
@@ -21,5 +21,5 @@ abstract class Visa {
   /// from the user [userJson] and auth response [oauthData]
   /// to build an [AuthData] object.
   AuthData authData(
-      Map<String, dynamic> userJson, Map<String, String> oauthData);
+      Map<String, dynamic> userJson, Map<String, String?> oauthData);
 }

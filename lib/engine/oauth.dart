@@ -88,7 +88,7 @@ class OAuth {
           returnedData[STATE_KEY] = state;
 
           if (clientSecret != null) {
-            returnedData[CLIENT_SECRET_KEY] = clientSecret;
+            returnedData[CLIENT_SECRET_KEY] = clientSecret!;
           }
 
           onDone(returnedData);

@@ -23,7 +23,7 @@ class GoogleAuth extends Visa {
 
         /// Sends a request to the user profile api
         /// endpoint. Returns an AuthData object.
-        getAuthData: (Map<String, String> oauthData) async {
+        getAuthData: (Map<String, String?> oauthData) async {
           if (debugMode) debug('In GoogleAuth -> OAuth Data: $oauthData');
 
           var token = oauthData[OAuth.TOKEN_KEY];
@@ -47,7 +47,7 @@ class GoogleAuth extends Visa {
   /// from the user [profileJson] and auth response [oauthData]
   /// to build an [AuthData] object.
   AuthData authData(
-      Map<String, dynamic> profileJson, Map<String, String> oauthData) {
+      Map<String, dynamic> profileJson, Map<String, String?> oauthData) {
     final String? accessToken = oauthData[OAuth.TOKEN_KEY];
 
     return AuthData(

@@ -20,7 +20,7 @@ class FacebookAuth extends Visa {
 
         /// Sends a request to the user profile api
         /// endpoint. Returns an AuthData object.
-        getAuthData: (Map<String, String> oauthData) async {
+        getAuthData: (Map<String, String?> oauthData) async {
           if (debugMode) debug('In FacebookAuth -> OAuth Data: $oauthData');
 
           final String? token = oauthData[OAuth.TOKEN_KEY];
@@ -45,7 +45,7 @@ class FacebookAuth extends Visa {
   /// from the user [json] and auth response [data]
   /// to build an [AuthData] object.
   @override
-  AuthData authData(Map<String, dynamic> json, Map<String, String> data) {
+  AuthData authData(Map<String, dynamic> json, Map<String, String?> data) {
     final String? accessToken = data[OAuth.TOKEN_KEY];
     final String profileImgUrl = 'https://graph.facebook.com/me/picture'
         '?type=large'

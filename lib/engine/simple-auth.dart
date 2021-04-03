@@ -19,7 +19,7 @@ class SimpleAuth {
 
   /// This function makes the necessary api calls to
   /// get a user's profile data. It accepts a single
-  /// argument: a Map<String, String> containing the
+  /// argument: a Map<String, String?> containing the
   /// full auth response including an api access token.
   /// An [AuthData] object is created from a combination
   /// of the passed in auth response and the user
