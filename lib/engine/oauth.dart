@@ -51,7 +51,7 @@ class OAuth {
         '&scope=$scope'
         '&response_type=token';
 
-    if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
 
     return WebView(
         onWebViewCreated: (controller) {
